@@ -1,0 +1,21 @@
+version: '3.0'
+services:
+  server:
+    image: mysql:5.7
+    volumes:
+      - /home/thucle/mysql_data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: "mysql"
+    networks:
+      - mysql 
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: "server"
+    networks:
+      - mysql    
+networks:
+  mysql:
+    driver: bridge
