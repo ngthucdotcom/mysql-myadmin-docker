@@ -10,6 +10,6 @@
 docker-compose up
 ```
 
-* Access to [localhost:8081](http://localhost:8081/)
+* Access to [localhost:8081](http://localhost:8081/) or connect to default setting (localhost:3306)
 
-* Login with username 'root' and password 'mysql'
+* Login with username 'root' and password 'root'

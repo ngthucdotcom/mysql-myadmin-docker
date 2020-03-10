@@ -3,9 +3,9 @@ services:
   server:
     image: mysql:5.7
     volumes:
-      - /home/thucle/mysql_data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
     environment: 
-      MYSQL_ROOT_PASSWORD: "mysql"
+      MYSQL_ROOT_PASSWORD: "root"
     networks:
       - mysql 
   myadmin:
@@ -14,6 +14,7 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: "server"
+      UPLOAD_LIMIT: 1024000000 # Limit 1GB
     networks:
       - mysql    
 networks:
