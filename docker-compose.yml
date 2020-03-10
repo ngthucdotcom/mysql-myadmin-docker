@@ -14,7 +14,7 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: "server"
-      UPLOAD_LIMIT: 1024000000 # Limit 1GB
+      UPLOAD_LIMIT: 1073741824 # Limit 1GB
     networks:
       - mysql    
 networks:
